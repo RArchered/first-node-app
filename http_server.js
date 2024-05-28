@@ -1,6 +1,9 @@
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
+
+const filePath = '~/node_learning'
+
 http.createServer(function (req, res) {
   // 6666端口浏览器无法访问
   const url = req.url;
@@ -8,13 +11,13 @@ http.createServer(function (req, res) {
   console.log("url: " + url);
   if (url === '/flower') {
     // 展示烟花
-    fpath = path.join(__dirname, './index.html')
+    fpath = path.join(filePath, './index.html')
   } else if (url.startsWith('/demo')) {
     // 展示demo页面
-    fpath = path.join(__dirname, './demo-html-css', url.substring(5))
+    fpath = path.join(filePath, './demo-html-css', url.substring(5))
   } else if (url.startsWith('/first_react')) {
     // 展示第一个react页面
-    fpath = path.join(__dirname, './first-react-app/build', url.substring(12))
+    fpath = path.join(filePath, './first-react-app/build', url.substring(12))
   }
   console.log("fpath: " + fpath);
   if (fpath === '') {
