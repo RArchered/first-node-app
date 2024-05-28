@@ -2,7 +2,7 @@ var http = require('http');
 var fs = require('fs');
 var path = require('path');
 
-const filePath = '~/node_learning'
+const filePath = '/home/ubuntu/node_learning'
 
 http.createServer(function (req, res) {
   // 6666端口浏览器无法访问
